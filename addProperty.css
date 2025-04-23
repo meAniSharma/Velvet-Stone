@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
   padding: 20px;
+  margin: 0;
 }
 
 .container {
   max-width: 700px;
   background: white;
-  padding: 20px;
+  padding: 30px;
   margin: auto;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -25,12 +28,17 @@ body {
   flex: 1;
   text-align: center;
   border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  background: #f1f1f1;
+  margin: 0 5px;
 }
 
 .step.active {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #007bff;
   font-weight: bold;
   background-color: #e0f0ff;
+  color: #007bff;
 }
 
 .form-step {
@@ -41,30 +49,35 @@ body {
   display: block;
 }
 
-.form-step:nth-child(3) {
-  background-color: #fafafa;
-  padding: 20px;
-  border-radius: 12px;
-}
-
 label {
   display: block;
-  margin-bottom: 10px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
 }
 
 input, textarea, select {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 12px;
   border: 1px solid #ccc;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s;
   box-sizing: border-box;
 }
 
-#map {
-  height: 300px;
-  margin: 10px 0;
-  border-radius: 10px;
+input:focus, textarea:focus, select:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
 button {
@@ -75,6 +88,19 @@ button {
   background-color: #007bff;
   color: white;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#map {
+  height: 300px;
+  margin: 15px 0;
+  border-radius: 12px;
 }
 
 #drop-zone {
@@ -83,7 +109,14 @@ button {
   text-align: center;
   cursor: pointer;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+}
+
+#drop-zone p {
+  margin: 0;
+  font-weight: 500;
+  color: #666;
 }
 
 #drop-zone input {
@@ -94,4 +127,10 @@ button {
   max-width: 100%;
   margin-top: 10px;
   border-radius: 10px;
+}
+
+.form-step:nth-child(3) {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
 }
