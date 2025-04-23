@@ -74,6 +74,11 @@ fileInput.addEventListener("change", () => {
   }
 });
 
+// Optional: Prevent default drag behavior on page
+["dragenter", "dragover", "dragleave", "drop"].forEach(evt =>
+  dropZone.addEventListener(evt, e => e.preventDefault())
+);
+
 dropZone.addEventListener("drop", e => {
   fileInput.files = e.dataTransfer.files;
   const event = new Event("change");
