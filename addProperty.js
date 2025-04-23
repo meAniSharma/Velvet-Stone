@@ -73,3 +73,15 @@ fileInput.addEventListener("change", () => {
     reader.readAsDataURL(file);
   }
 });
+
+dropZone.addEventListener("drop", e => {
+  fileInput.files = e.dataTransfer.files;
+  const event = new Event("change");
+  fileInput.dispatchEvent(event);
+});
+
+// Submit Handler (prevent default for now)
+document.getElementById("multiStepForm").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Form submitted!");
+});
