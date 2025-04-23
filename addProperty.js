@@ -52,3 +52,24 @@ document.getElementById("city").addEventListener("blur", () => {
     updateMapLocation(`${city}, ${country}`);
   }
 });
+
+// Image Upload Preview
+const dropZone = document.getElementById("drop-zone");
+const fileInput = document.getElementById("fileInput");
+const preview = document.getElementById("preview");
+
+dropZone.addEventListener("click", () => fileInput.click());
+
+fileInput.addEventListener("change", () => {
+  preview.innerHTML = ""; // clear previous
+  const file = fileInput.files[0];
+  if (file && file.type.startsWith("image/")) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const img = document.createElement("img");
+      img.src = e.target.result;
+      preview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  }
+});
