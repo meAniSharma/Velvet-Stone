@@ -7,6 +7,65 @@
   <link rel="stylesheet" href="payment.css" />
 </head>
 <body>
+    <div class="payment-container">
+        <header>
+          <div class="logo">Velvet&Stone</div>
+          <h2>Secure Payment</h2>
+          <a href="#" class="back-link">Back to Listings</a>
+        </header>
     
+        <main class="payment-main">
+          <!-- Payment Form -->
+          <section class="form-section">
+            <form id="paymentForm">
+              <label>Full Name<input type="text" required /></label>
+              <label>Email<input type="email" required /></label>
+              <label>Mobile Number<input type="tel" required /></label>
+    
+              <label>Payment Method
+                <select id="paymentMethod">
+                  <option value="card">Credit/Debit Card</option>
+                  <option value="upi">UPI</option>
+                </select>
+              </label>
+    
+              <div id="cardDetails">
+                <label>Card Number<input type="text" maxlength="19" /></label>
+                <label>Expiry Date<input type="text" placeholder="MM/YY" /></label>
+                <label>CVV<input type="password" maxlength="3" /></label>
+              </div>
+    
+              <div id="upiDetails" style="display: none;">
+                <label>UPI ID<input type="text" placeholder="example@upi" /></label>
+              </div>
+    
+              <label>Billing Address<input type="text" required /></label>
+    
+              <label class="save-checkbox">
+                <input type="checkbox" /> Save payment details
+              </label>
+    
+              <button type="submit">Pay Now</button>
+            </form>
+          </section>
+    
+          <!-- Rental Summary -->
+          <aside class="summary-section">
+            <h3>Rental Summary</h3>
+            <img src="property.jpg" alt="Property" />
+            <p><strong>123 Elm Street, NY</strong></p>
+            <ul>
+              <li>Rent: $1,200</li>
+              <li>Security Deposit: $500</li>
+              <li>Maintenance Fee: $100</li>
+            </ul>
+            <p class="total">Total: <strong>$1,800</strong></p>
+            <a href="#">View Breakdown</a>
+            <div class="support">
+              <p>Need help? <a href="#">Contact Support</a></p>
+            </div>
+          </aside>
+        </main>
+      </div>
 </body>
 </html>
