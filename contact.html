@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | Velvet & Stone</title>
+  <title>Contact Us | Velvet &amp; Stone</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 
   <header>
-    <div class="logo">Velvet & Stone</div>
+    <div class="logo">Velvet &amp; Stone</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="properties.html">Properties</a>
       <a href="#">Agents</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
   </header>
 
-  <section class="contact-hero">
-    <h1>Get in Touch with Us</h1>
-  </section>
+  <main>
+    <section class="contact-hero">
+      <h1>Get in Touch with Us</h1>
+    </section>
 
-  <section class="contact-section">
-    <div class="contact-form">
-      <h2>Send a Message</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Subject" required />
-        <textarea rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <section class="contact-section">
+      <div class="contact-form fade-in">
+        <h2>Send a Message</h2>
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" name="name" required />
+          <input type="email" placeholder="Your Email" name="email" required />
+          <input type="text" placeholder="Subject" name="subject" required />
+          <textarea rows="6" placeholder="Your Message" name="message" required></textarea>
+          <button type="submit">Submit</button>
+          <p id="formStatus"></p>
+        </form>
+      </div>
 
-    <div class="contact-info">
-      <h3>Contact Information</h3>
-      <p><strong>Email:</strong> info@velvet&stone.com</p>
-      <p><strong>Phone:</strong> +91 1234567890</p>
-      <p><strong>Location:</strong> Beverly Hills, CA, USA</p>
-      <p><strong>Hours:</strong> Mon - Fri, 9am - 6pm</p>
-    </div>
-  </section>
+      <div class="contact-info fade-in">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> info@velvetandstone.com</p>
+        <p><strong>Phone:</strong> +91 1234567890</p>
+        <p><strong>Location:</strong> Beverly Hills, CA, USA</p>
+        <p><strong>Hours:</strong> Mon - Fri, 9am - 6pm</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div>
@@ -58,10 +61,11 @@
     </div>
     <div>
       <h4>Contact</h4>
-      <p>Email: info@velvet&stone.com</p>
+      <p>Email: info@velvetandstone.com</p>
       <p>Phone: +91 1234567890</p>
     </div>
   </footer>
 
+  <script src="contact.js"></script>
 </body>
 </html>
