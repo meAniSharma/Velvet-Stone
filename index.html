@@ -9,14 +9,24 @@
 </head>
 <body>
   <header>
-    <div class="logo">Velvet & Stone</div>
-    <nav>
-      <a href="#top">Home</a>
-      <a href="properties.html">Properties</a>
-      <a href="#">Agents</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container">
+      <div class="header-left">
+        <img src="WhatsApp Image 2025-04-26 at 2.41.56 PM.jpeg" alt="Velvet & Stone Logo" class="logo-img" />
+        <div class="logo-text">Velvet & Stone</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#top">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="#">Agents</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="#" onclick="openModal('loginModal')" class="btn-login">Login</a>
+        <a href="#" onclick="openModal('signupModal')" class="btn-signup">Signup</a>        
+      </div>
+    </div>
   </header>
+
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -41,6 +51,7 @@
       </div>
     </div>
   </section>
+
   <section>
     <h2 class="section-title">Featured Listings</h2>
     <div class="featured-properties">
@@ -53,6 +64,7 @@
           <a href="#" class="btn-view">View Details</a>
         </div>
       </div>
+
       <div class="property-card">
         <img src="https://t3.ftcdn.net/jpg/04/72/54/88/360_F_472548856_80mcvpJbsXXz5OE7A2A0urAhh634fJge.jpg" alt="Property 2">
         <div class="property-details">
@@ -62,35 +74,84 @@
           <a href="#" class="btn-view">View Details</a>
         </div>
       </div>
+
       <div class="property-card">
         <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Property 3">
         <div class="property-details">
           <h3>High-Rise Flat in Dubai Marina</h3>
           <p>Dubai, UAE</p>
           <div class="property-price">AED 3M</div>
-          <a href="#\https://t3.ftcdn.net/jpg/04/72/54/88/360_F_472548856_80mcvpJbsXXz5OE7A2A0urAhh634fJge.jpg" class="btn-view">View Details</a>
+          <a href="#" class="btn-view">View Details</a>
         </div>
       </div>
     </div>
   </section>
- <footer>
-  <div>
-    <h4>About Us</h4>
-    <p>We help you find the perfect property across the globe with verified listings and expert support.</p>
-  </div>
-  <div>
-    <h4>Quick Links</h4>
-    <a href="#">Home</a>
-    <a href="#">Properties</a>
-    <a href="#">Agents</a>
-    <a href="#">Contact</a>
-  </div>
-  <div>
-    <h4>Contact</h4>
-    <p>Email: info@dreamstay.com</p>
-    <p>Phone: +1 234 567 890</p>
-  </div>
-</footer>
 
+  <footer>
+    <div>
+      <h4>About Us</h4>
+      <p>We help you find the perfect property across the globe with verified listings and expert support.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Properties</a>
+      <a href="#">Agents</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Email: info@dreamstay.com</p>
+      <p>Phone: +1 234 567 890</p>
+    </div>
+  </footer>
+  <!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('loginModal')">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('signupModal')">&times;</span>
+    <h2>Signup</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Signup</button>
+    </form>
+  </div>
+</div>
+<script>
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
+  
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+  
+  // Close modal when clicking outside of it
+  window.onclick = function(event) {
+    const loginModal = document.getElementById('loginModal');
+    const signupModal = document.getElementById('signupModal');
+    if (event.target == loginModal) {
+      loginModal.style.display = "none";
+    }
+    if (event.target == signupModal) {
+      signupModal.style.display = "none";
+    }
+  }
+  </script>
+  
 </body>
 </html>
