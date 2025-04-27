@@ -86,4 +86,41 @@
       chatbotId: "ef55bfbf-8810-4ce6-bd26-6ac3ce8e5152",
     });
   </script> 
+  <script>
+    document.getElementById('multiStepForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const imageFile = document.getElementById('fileInput').files[0];
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const imageData = reader.result;
+
+    const newProperty = {
+      country: document.getElementById('country').value,
+      city: document.getElementById('city').value,
+      address: document.getElementById('address').value,
+      image: imageData,
+      propertyType: document.querySelector('select').value,
+      bedrooms: document.querySelectorAll('input[type="number"]')[0].value,
+      bathrooms: document.querySelectorAll('input[type="number"]')[1].value,
+      rent: document.querySelectorAll('input[type="number"]')[2].value,
+      furnishing: document.querySelectorAll('select')[1].value,
+      availableFrom: document.querySelector('input[type="date"]').value,
+      description: document.querySelector('textarea').value,
+    };
+
+    const stored = JSON.parse(localStorage.getItem('properties')) || [];
+    stored.push(newProperty);
+    localStorage.setItem('properties', JSON.stringify(stored));
+
+    window.location.href = 'propertyList.html';
+  };
+
+  if (imageFile) {
+    reader.readAsDataURL(imageFile);
+  }
+});
+
+  </script>
 </html>
