@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Listings</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f4f4f4;
+    }
+    .listing {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .listing img {
+      width: 200px;
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .details {
+      flex: 1;
+      margin-right: 1rem;
+    }
+    .details h3 {
+      margin: 0 0 0.5rem;
+    }
+    .details p {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Available Rental Properties</h2>
+  <div id="propertyList"></div>
+
+  <script>
+    const listings = JSON.parse(localStorage.getItem('properties')) || [];
+  
+    const listContainer = document.getElementById('propertyList'); // Only declare once
+  
+    function renderListings() {
+      listContainer.innerHTML = ''; // Clear existing listings first
+  
+      listings.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'listing';
+        div.innerHTML = `
+          <div class="details">
+            <h3>${item.propertyType} in ${item.city}, ${item.country}</h3>
+            <p><strong>Address:</strong> ${item.address}</p>
+            <p><strong>Rent:</strong> ₹${item.rent}</p>
+            <p><strong>Bedrooms:</strong> ${item.bedrooms}, <strong>Bathrooms:</strong> ${item.bathrooms}</p>
+            <p><strong>Furnishing:</strong> ${item.furnishing}</p>
+            <p>${item.description || ''}</p>
+            <button style="margin-top:10px; padding:5px 10px; background:red; color:white; border:none; border-radius:4px; cursor:pointer;" onclick="deleteProperty(${index})">Delete</button>
+          </div>
+          <img src="${item.image}" alt="Property Image" />
+        `;
+        listContainer.appendChild(div);
+      });
+    }
+  
+    function deleteProperty(index) {
+      if (confirm('Are you sure you want to delete this property?')) {
+        listings.splice(index, 1); // Remove from the listings array
+        localStorage.setItem('properties', JSON.stringify(listings)); // Update storage
+        renderListings(); // Re-render after deletion
+      }
+    }
+  
+    renderListings(); // Initial render
+  </script>
+  
+  
+  <div style="text-align: center; margin-top: 2rem;">
+    <button onclick="window.location.href='addProperty.html'"
+            style="padding: 0.7rem 1.5rem; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+      + Add New Property
+    </button>
+  </div>
+  
+</body>
+</html>
