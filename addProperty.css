@@ -165,6 +165,8 @@ textarea {
   min-height: 80px;
 }
 
+/* button */
+
 button {
   padding: 10px 20px;
   margin: 10px 5px 0 0;
@@ -187,6 +189,8 @@ button:hover {
   margin: 15px 0;
   border-radius: 12px;
 }
+
+/* drop zone */
 
 #drop-zone {
   border: 2px dashed #ccc;
