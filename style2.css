@@ -52,51 +52,50 @@ form {
 }
 
 form.sign-up-form {
-    opacity: 0;
-    z-index: 1;
-  }
-  
-  form.sign-in-form {
-    z-index: 2;
-  }
-  
-  .title {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-  
-  .input-field {
-    max-width: 380px;
-    width: 100%;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    height: 55px;
-    border-radius: 55px;
-    display: grid;
-    grid-template-columns: 15% 85%;
-    padding: 0 0.4rem;
-    position: relative;
-  }
-  
-  .input-field i {
-    text-align: center;
-    line-height: 55px;
-    color: #000000;
-    transition: 0.5s;
-    font-size: 1.1rem;
-  }
-  
-  .input-field input {
-    background: none;
-    outline: none;
-    border: none;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #000000;
-  }
-  
+  opacity: 0;
+  z-index: 1;
+}
+
+form.sign-in-form {
+  z-index: 2;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #000000;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #000000;
+}
 
 .input-field input::placeholder {
   color: #000000;
@@ -190,6 +189,7 @@ form.sign-up-form {
   text-align: center;
   z-index: 6;
 }
+
 .left-panel {
   pointer-events: all;
   padding: 3rem 17% 2rem 12%;
@@ -226,6 +226,7 @@ form.sign-up-form {
   font-weight: 600;
   font-size: 0.8rem;
 }
+
 .right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
@@ -413,5 +414,3 @@ form.sign-up-form {
     left: 50%;
   }
 }
-
-
