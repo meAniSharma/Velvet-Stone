@@ -7,6 +7,8 @@ body {
   margin: 0;
 }
 
+/* header */
+
 header {
   background-color:#f4f4f4;
   padding: 20px 50px;
@@ -23,6 +25,8 @@ header {
   align-items: center;
   gap: 15px; /* gives clean space between logo and text */
 }
+
+/* logo */
 
 .logo-img {
   height: 50px;
