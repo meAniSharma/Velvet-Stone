@@ -2,10 +2,12 @@ function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
   }
   
+
   function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
   }
   
+
   window.onclick = function(event) {
     const loginModal = document.getElementById('loginModal');
     const signupModal = document.getElementById('signupModal');
@@ -16,6 +18,7 @@ function openModal(modalId) {
       signupModal.style.display = "none";
     }
   }
+  
   function clearSearch() {
   const searchInputs = document.querySelectorAll('.search-bar input, .search-bar select');
   searchInputs.forEach(input => {
