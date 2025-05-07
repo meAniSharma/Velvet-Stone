@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rental Property Submission</title>
+    <link rel="stylesheet" href="addProperty.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="header-left">
+        <img src="logo.jpeg" alt="Velvet & Stone Logo" class="logo-img" />
+      </div>
+      <div class="header-center">
+        <nav class="nav-links">
+          <a href="#top">Home</a>
+          <a href="properties.html">Properties</a>
+          <a href="addProperty.html">Add Properties </a>
+          <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+  </header>
+    <div class="container">
+        <div class="steps">
+          <div class="step active">1 Location</div>
+          <div class="step">2 Images</div>
+          <div class="step">3 Details</div>
+          <div class="step">4 Submit</div>
+        </div>
+    
+        <form id="multiStepForm">
+          <!-- Step 1: Location -->
+          <div class="form-step active">
+            <label>Country* <input type="text" id="country" required /></label>
+            <label>City* <input type="text" id="city" required /></label>
+            <label>Address* <input type="text" id="address" required /></label>
+            <div id="map"></div>
+            <button type="button" class="next">Next</button>
+          </div>
+
+          <!-- Step 2: Images -->
+      <div class="form-step">
+        <div id="drop-zone">
+          <p>Drag & Drop or Click to Upload Image</p>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+        <div id="preview"></div>
+        <button type="button" class="prev">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+
+      <!-- Step 3: Property Details -->
+      <div class="form-step">
+        <label>Property Type* 
+          <select required>
+            <option value="">Select</option>
+            <option>Apartment</option>
+            <option>House</option>
+            <option>Studio</option>
+            <option>Villa</option>
+          </select>
+        </label>
+        <label>Bedrooms* <input type="number" required /></label>
+        <label>Bathrooms* <input type="number" required /></label>
+        <label>Rent per Month (INR)* <input type="number" required /></label>
+        <label>Furnishing* 
+          <select required>
+            <option value="">Select</option>
+            <option>Furnished</option>
+            <option>Semi-Furnished</option>
+            <option>Unfurnished</option>
+          </select>
+        </label>
+        <label>Available From* <input type="date" required /></label>
+        <label>Description <textarea></textarea></label>
+        <button type="button" class="prev">Back</button>
+        <button type="button" class="next">Next</button>
+      </div>
+
+      <!-- Step 4: Submit -->
+      <div class="form-step">
+        <h3>Review & Submit</h3>
+        <p>Please review your details before submitting.</p>
+        <!-- Summary details can be added here -->
+        <button type="button" class="prev">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="addProperty.js"></script>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/@denserai/embed-chat@1/dist/web.min.js";
+    Chatbot.init({
+      chatbotId: "ef55bfbf-8810-4ce6-bd26-6ac3ce8e5152",
+    });
+  </script> 
+  <script>
+    document.getElementById('multiStepForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const imageFile = document.getElementById('fileInput').files[0];
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const imageData = reader.result;
+
+    const newProperty = {
+      country: document.getElementById('country').value,
+      city: document.getElementById('city').value,
+      address: document.getElementById('address').value,
+      image: imageData,
+      propertyType: document.querySelector('select').value,
+      bedrooms: document.querySelectorAll('input[type="number"]')[0].value,
+      bathrooms: document.querySelectorAll('input[type="number"]')[1].value,
+      rent: document.querySelectorAll('input[type="number"]')[2].value,
+      furnishing: document.querySelectorAll('select')[1].value,
+      availableFrom: document.querySelector('input[type="date"]').value,
+      description: document.querySelector('textarea').value,
+    };
+
+    const stored = JSON.parse(localStorage.getItem('properties')) || [];
+    stored.push(newProperty);
+    localStorage.setItem('properties', JSON.stringify(stored));
+
+    window.location.href = 'propertyList.html';
+  };
+
+  if (imageFile) {
+    reader.readAsDataURL(imageFile);
+  }
+});
+
+  </script>
+</html>

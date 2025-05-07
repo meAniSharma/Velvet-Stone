@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="header-left">
+        <img src="logo.jpeg" alt="Velvet & Stone Logo" class="logo-img" />
+        <div class="logo-text">Velvet & Stone</div>
+      </div>
+      <div class="header-center">
+        <nav class="nav-links">
+          <a href="#top">Home</a>
+          <a href="properties.html">Properties</a>
+          <a href="addProperty.html">Add Properties </a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="#" onclick="openModal('loginModal')" class="btn-login">Login</a>
+        <a href="#" onclick="openModal('signupModal')" class="btn-signup">Signup</a>
+      </div>
+    </div>
+  </header>
+  
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Find Your Dream Home</h1>
+      <p>Explore the best properties in your city with us.</p>
+      <div class="search-bar">
+        <select>
+          <option>Location</option>
+          <option>New York</option>
+          <option>Mumbai</option>
+          <option>Dubai</option>
+        </select>
+        <select>
+          <option>Property Type</option>
+          <option>Apartment</option>
+          <option>Villa</option>
+          <option>Office</option>
+        </select>
+        <input type="text" placeholder="Min Price" />
+        <input type="text" placeholder="Max Price" />
+        <button type="button" onclick="clearSearch()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Featured Listings</h2>
+    <div class="featured-properties">
+      <div class="property-card">
+        <img src="https://images.ctfassets.net/n2ifzifcqscw/2qhxwsp5hOBghbdEOOLSux/ef05c74d95b6b4540fc0d563dbbd7d26/P1753785.jpg?w=425" alt="Property 1">
+        <div class="property-details">
+          <h3>Luxury Villa in Beverly Hills</h3>
+          <p>California, USA</p>
+          <div class="property-price">$2,000,000</div>
+          <a href="#" class="btn-view">View Details</a>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <img src="https://t3.ftcdn.net/jpg/04/72/54/88/360_F_472548856_80mcvpJbsXXz5OE7A2A0urAhh634fJge.jpg" alt="Property 2">
+        <div class="property-details">
+          <h3>Modern Apartment in Mumbai</h3>
+          <p>Mumbai, India</p>
+          <div class="property-price">₹1.5 Cr</div>
+          <a href="#" class="btn-view">View Details</a>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Property 3">
+        <div class="property-details">
+          <h3>High-Rise Flat in Dubai Marina</h3>
+          <p>Dubai, UAE</p>
+          <div class="property-price">AED 3M</div>
+          <a href="#" class="btn-view">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <h4>About Us</h4>
+      <p>We help you find the perfect property across the globe with verified listings and expert support.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Properties</a>
+      <a href="#">Agents</a>
+      <a href="#">Contact</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Email: info@dreamstay.com</p>
+      <p>Phone: +1 234 567 890</p>
+    </div>
+  </footer>
+<script src="index.js"></script>
+</body>
+</html>
